@@ -9,6 +9,8 @@ var mongoose = require ('mongoose')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var homepageRouter = require('./routes/homepage');
+var cohortsRouter = require('./routes/cohorts');
 var loginRouter = require('./routes/login');
 var formRouter = require('./routes/form');
 
@@ -30,6 +32,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/homepage', homepageRouter);
+app.use('/cohorts', cohortsRouter);
 app.use('/login', loginRouter);
 app.use('/form', formRouter);
 
