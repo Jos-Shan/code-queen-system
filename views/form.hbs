@@ -162,7 +162,14 @@
       <script>
 
     $('.submitBtn').click( async (e)=>{
-        e.preventDefault();
+        event.preventDefault();
+        fetch('/', {
+          method : 'post',
+          body : JSON.stringify(),
+          headers : {
+            "Content-Type" "application/json"
+          }
+        })
        });
         
       </script>

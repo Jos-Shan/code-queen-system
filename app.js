@@ -12,11 +12,12 @@ var usersRouter = require('./routes/users');
 var homepageRouter = require('./routes/homepage');
 var cohortsRouter = require('./routes/cohorts');
 var loginRouter = require('./routes/login');
+var signupRouter = require('./routes/signup');
 var formRouter = require('./routes/form');
 
 var app = express();
 
-mongoose.connect('mongodb://localhost:27017/code-queen')
+mongoose.connect('mongodb://localhost:27017/code_queen')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -35,6 +36,7 @@ app.use('/users', usersRouter);
 app.use('/homepage', homepageRouter);
 app.use('/cohorts', cohortsRouter);
 app.use('/login', loginRouter);
+app.use('/signup', signupRouter);
 app.use('/form', formRouter);
 
 // catch 404 and forward to error handler
