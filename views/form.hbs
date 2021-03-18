@@ -156,7 +156,7 @@
 
         <input type="checkbox" id="permission" name="permission"><label><b>Please check this box to give ETC permission to contact you and also process and store your data for reports</b></label><br> <br>
         
-        <input id="new-detail-input" class="sunmitBtn" type="submit" value="Submit">  
+        <input id="new-detail-input" class="submitBtn" type="submit" value="Submit">  
       </form> 
 
       <script>
@@ -164,13 +164,30 @@
     $('.submitBtn').click( async (e)=>{
         event.preventDefault();
         fetch('/', {
-          method : 'post',
+          method : 'POST',
           body : JSON.stringify(),
           headers : {
             "Content-Type" "application/json"
           }
         })
-       });
+       }); 
+
+/*const form = document.querySelector("input")
+form.addEventListener('submit', async (e) =>{
+  e.preventDefault()
+
+  const formData = formInfo
+
+const res = await fetch('/', {
+         method : 'POST',
+          body : JSON.stringify({body : formInfo}),
+          headers : {
+            "Content-Type" "application/json"
+          }
+       })
+}) */
+
+       
         
       </script>
 </body>

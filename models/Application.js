@@ -1,16 +1,18 @@
 var express = require('express');
 var mongoose = require('mongoose');
 
-const dbPath = 'mongodb://localhost:27017/code_queen';
+const dbPath = 'mongodb://localhost:27017/code-queen-db';
 const options = {
-    useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true
-}
+    useCreateIndex: true,
+    useFindAndModify: true,
+    useNewUrlParser: true
+};
 
-mongoose.connect(dbPath, options);
+//default connection
+const connection = mongoose.createConnection(dbPath, options);
 
-const StudentSchema = mongoose.Schema({
+const schema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
@@ -41,4 +43,5 @@ const StudentSchema = mongoose.Schema({
     course: { type: String, required: true, trim: true },
 });
 
-const Application = module.exports = mongoose.model("Application", StudentSchema);
+const Application = module.exports = connection.model("Application", schema);
+

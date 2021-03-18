@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
-var Application = require('../models/User');
+var Application = require('../models/Application');
 var app = express();
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    Application.find(function(err, User){
+    Application.find(function(err, Application){
     res.render('form');
     });
 });
@@ -45,14 +45,17 @@ app.post('/form', function(req, res){
         });
           
         newApplication.save(function(err, Application){
-           if(err)
-              res.render('show_message', {message: "Database error", type: "error"});
+           if(err) return handleError(err);
+        });
+              
+          /* res.render('show_message', {message: "Database error", type: "error"});
            else
               res.render('show_message', {
                  message: "New person added", type: "success", form: personInfo});
-        });
-    }
-    });
+        }); */
+
+    } 
+    }); 
     
     
     //retrieving
