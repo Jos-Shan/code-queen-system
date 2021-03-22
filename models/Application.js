@@ -10,7 +10,7 @@ const options = {
 };
 
 //default connection
-const connection = mongoose.createConnection(dbPath, options);
+mongoose.connect(dbPath, options);
 
 const schema = new mongoose.Schema({
     email: {
@@ -43,5 +43,5 @@ const schema = new mongoose.Schema({
     course: { type: String, required: true, trim: true },
 });
 
-const Application = module.exports = connection.model("Application", schema);
+const Application = module.exports = mongoose.model("Application", schema);
 
