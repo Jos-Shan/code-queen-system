@@ -18,15 +18,15 @@ const schema = new mongoose.Schema({
         required: true,
         unique: true,
         lowercase: true,
-        validate: value =>{
+        /*validate: value =>{
             if(!validator.isEmail(value)){
                 throw new Error ({error: 'Invalid email address'})
             }
-        }
+        }*/
     },
     firstname: { type: String, required: true, trim: true },
     lastname: { type: String, required: true, trim: true },
-    phone: { type: Number, required: true, trim: true },
+    phone: { type: String, required: true, trim: true },
     birthdate: { type: Date, required: true, trim: true },
     city: { type: String, required: true, trim: true },
     status: { type: String, required: true, trim: true },

@@ -1,0 +1,10 @@
+1. Anyone can access the homepage on the codequeen website.
+2. If interested, they can check out the cohorts in case they want to join
+3. if there is an upcoming cohort intake, they can apply using the form on both the homepage and cohort page.
+4. The information from the form application is stored in the database and is connected to the general information later used in case one joins a cohort
+5. Once a student is accepted in the cohort, they are registered in the system using their emails and are given a dummy password which they can change plus add their usernames as they sign up.
+6. once a student has signed up, they are able to login using their new username/email and password
+7. when a student logs in, they should be able to see their student profiles and can edit their contacts, profile picture, and attach their linkedin profiles and all related accounts. 
+They should also be able to look at the job postings and also see what events are coming up and any other alumni activities
+8. when the admin logs in (facilitators), they should be able to view all the students in a particular cohort, edit and update student progress(assignments and assessment)
+9. when the super admin logs in, they should be able to view the admin dashboard

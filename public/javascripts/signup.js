@@ -1,6 +1,6 @@
     
 	function togglePassword() {
-		var x =document.getElementById("password");
+		let x =document.getElementById("password");
 		if (x.type === "password") {
 			x.type ="text";
 		} else {
@@ -16,7 +16,7 @@
 		let email= document.getElementById("email").value;
 		let username= document.getElementById("username").value;
 		let password= document.getElementById("password").value;			
-		//let confirmPassword= document.getElementById("confirm password").value;
+		
 
 		let password_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
 		let letters = /^[A-Za-z]+$/;
@@ -42,6 +42,10 @@
 	{
 		alert("Please enter your username");
 	}
+	else if(!letters.test(username))
+	{
+		alert("UserName field requires only alphabet characters"); 
+	}
 	else if(email==="")
 	{
 		alert("Please enter your user email");
@@ -55,18 +59,12 @@
 	{
 		alert("Please enter your Password");
 	}
-	/*else if(confirmPassword==="")
-	{
-		alert("Confirm your Password");
-	}*/
+	
 	else if(!password_expression.test(password))
 	{
 		alert ("Upper case, Lower case, Special character and Numeric letter are required in Password field");
 	}
-	/*else if(password!= confirmPassword)
-	{
-		alert ("Passwords do not Match");
-	}*/
+	
 	else if(document.getElementById("password").value.length < 8)
 	{
 		alert ("Password minimum length is 8");
@@ -78,62 +76,38 @@
 	else
 	{				                            
 		   alert("Thank You for signing up");
-		   // Redirecting to the studentprofile page. 
-		   window.location = "studentprofile.html"; 
-	
-	}
+		    
+   }
+   //beginning
 
-	//}
-
-	const form = document.getElementById("signupform")
-
-	form.addEventListener("submit", function (e){
-		e.preventDefault()
-	});
-
-	const formData = new FormData(this);
-	
-	fetch ("https://localhost:3000/signup",{
-		method: "POST",
-		body:JSON.stringify({
-			body:formData,
-		}),
-		headers:{
-			"Content-Type": "application/json"
-		}
-		  .then (function(response){
-			  return response.json()
-		  })
-		  .then(function(data){
-			  console.log(data)       
-			})
-	 
-	
-	})
-
+//ends
 }
-	 	
-/*function clearinputfields()
-{
-	document.getElementById("firstname").value==="";
-	document.getElementById("lastname").value==="";
-	document.getElementById("username").value==="";
-	document.getElementById("email").value==="";
-	document.getElementById("password").value==="";
-	//document.getElementById("confirm password").value==="";
-}*/
- 
-/* const registerBtn = document.getElementById("register-btn");
- 
 
-  const Url = "http://localhost:3000/signup"
-  const response = await fetch(Url, {
-            method: "POST",
-            body: JSON.stringify(register),
-            headers: {
-                "Content-Type": "application/json",
-            },
- });
- registerBtn.addEventListener("click", async() => {
-	clearinputfields()
- }); */
+
+const form = document.getElementById("signupform");
+form.addEventListener('submit', async (e) => {
+	e.preventDefault();
+ //get values
+    const firstname = form.firstname.value;
+    const lastname = form.lastname.value;
+	const username = form.username.value;
+	const email = form.email.value;
+	const password = form.password.value;
+    
+ try {
+	 const res = await fetch('/signup',{
+	method: 'POST',
+	body: JSON.stringify({ firstname, lastname, username, email, password }),	
+	headers: {'Content-Type': 'application/json'}
+	});
+	const data = await res.json();
+	console.log(data);
+	if (data.user) {
+		location.assign('/');
+	  }
+ }
+ catch (error) {
+	console.log(error);
+  }
+ });	
+	

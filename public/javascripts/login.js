@@ -1,13 +1,11 @@
 function validateform()
 {
- //const userName = document.getElementById("username").value;
- //const password = document.getElementById("password").value;
  let username= document.getElementById("username").value;
  let password= document.getElementById("password").value;
 
  let password_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
  let letters = /^[A-Za-z]+$/;
- //let filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+ 
 
  if (username==="")
  {  
@@ -34,32 +32,36 @@ function validateform()
 	{				                            
 		   alert("Thank You! You have successfully logged in.");
 		   // Redirecting to the studentprofile page. 
-		   window.location = "studentprofile.html"; 
-	}
-	const form =document.getElementById("loginform")
-
-	form.addEventListener("submit", function (e){
-		e.preventDefault()
-	});
-
-	const formData = new FormData(this)
+		  // window.location = "studentprofile.html"; 
+	}//begins
 	
-	fetch ("https://jsonplaceholder.typicode.com/posts",{
-		method: "POST",
-		body:JSON.stringify({
-			body:formData,
-		}),
-		headers:{
-			"Content-Type": "application/json"
-		}
-		  .then (function(response){
-			  return response.json()
-		  })
-		  .then(function(data){
-			  console.log(data)       
-			})
-	 
-	
-	})
+//ends	
 } 
 
+const form =document.getElementById("loginform");
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+	
+	 
+	 // get values
+	 const username = form.username.value;
+	 const password = form.password.value;
+	 try {
+		 const res = await fetch('/login',{
+		method: 'POST',
+		body: JSON.stringify({ username, password }),	
+		headers: {'Content-Type': 'application/json'}
+		});
+		const data = await res.json();
+		console.log(data);
+		if (data.user) {
+			//location.assign('/profile');
+			
+		  }
+	
+	 }
+	 catch (error) {
+		console.log(error);
+	  }
+});
+	

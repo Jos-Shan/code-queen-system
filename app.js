@@ -18,6 +18,8 @@ var formRouter = require('./routes/form');
 var app = express();
 
 mongoose.connect('mongodb://localhost:27017/code-queen-db', {useNewUrlParser: true, useUnifiedTopology: true})
+require('./models/Application'); 
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
