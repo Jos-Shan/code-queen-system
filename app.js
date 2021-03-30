@@ -14,6 +14,13 @@ var cohortsRouter = require('./routes/cohorts');
 var loginRouter = require('./routes/login');
 var signupRouter = require('./routes/signup');
 var formRouter = require('./routes/form');
+var dashboardRouter = require('./routes/dashboard');
+var allstudentsRouter = require('./routes/allstudents');
+var profileRouter = require('./routes/profile');
+var alljobsRouter = require('./routes/alljobs');
+var postjobRouter = require('./routes/postjob');
+var registeruserRouter = require('./routes/registeruser');
+var registermentorRouter = require('./routes/registermentor');
 
 var app = express();
 
@@ -40,6 +47,13 @@ app.use('/cohorts', cohortsRouter);
 app.use('/login', loginRouter);
 app.use('/signup', signupRouter);
 app.use('/form', formRouter);
+app.use('/dashboard', dashboardRouter);
+app.use('/all-students', allstudentsRouter);
+app.use('/profile', profileRouter);
+app.use('/all-jobs', alljobsRouter);
+app.use('/post-job', postjobRouter);
+app.use('/register-user', registeruserRouter);
+app.use('/register-mentor', registermentorRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
