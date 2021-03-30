@@ -5,28 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Login Page</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="stylesheets/login.css">
+    <link rel="stylesheet" href="login.css">
 
 </head>
 <body>
 	<div class="logo">
-		<img src="images/Code Queen Logo.png" alt="CodeQueen logo" width="200px">
+		<img src="Code Queen Logo.png" alt="CodeQueen logo" width="200px">
 	</div>
 	<div class="big-one">
+		<h1 class="form-title">Login</h1>
+		
 		<div class="container">
 			<form action="/login" class="form"id="loginform"method="POST">
-				<h1 class="form-title">Login</h1>
-				
 				<div class="form-input-group">
-					<input type="text" class="form-input" id="username" name= "username" autofocus placeholder="Username">
+					<input type="text" class="form-input" id="loginUsername"name="username" autofocus placeholder="Username">
 				</div>
 				<div class="form-input-group">
-					<input type="password" class="form-input" id="password" name="password" autofocus placeholder="Password">
+					<input type="password" class="form-input" id="security"name="password"autofocus placeholder="Password">
 				<div> 
-				<div class="forgotpass"> <a href="./forgotpass.html" class="ml-auto mb-0 text-md">Forgot Password?</a></div>
-				<button type="submit" class="form-button" >Submit</button>
-				<p class="form-text">Don't have an account? <a id="form-link" href="signup">Sign Up Here</a></p>
+				<div class="forgotpass"> <a href="forgotpass.hbs" class="ml-auto mb-0 text-md">Forgot Password?</a></div>
+				<button class="form-button" type="button" onclick="validateform()">Submit</button>
+				<p class="form-text">Don't have an account? <a id="form-link" href="signup.hbs">Sign Up Here</a></p>
 			</form>
 			
 		</div>
