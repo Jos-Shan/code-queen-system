@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="studentprofile.css">
+
+</head>
+
+<body>
+    <img src="Code Queen Logo.png" alt="Code Queen Logo" class="logo">
+    <div class="cover">
+        <h1 class="title">Student Profile</h1>
+        <div class="container">
+            <div class="heading">
+                <a href="home.html" class="btn btn-secondary" role="button"> Logout</a>
+                <a href="connect.html" class="btn btn-secondary" role="button"> Connect</a>
+                <a href="studentlist.html" class="btn btn-secondary" role="button"> Students'List</a>
+                <a href="sign up.html" class="btn btn-secondary" role="button"> Edit Details </a>
+
+                <div class="student-details">
+                    <div class="profile-photo">
+                        <p><label for="file" style="cursor: pointer;">Upload Image</label></p>
+                        <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none">
+                        <img id="output" width="160" height="150"/>	
+                    </div>
+                    <div class="box-text">
+                        <h4>Joyce Thereza Akite</h4>
+                        <p><b>Email:</b> joyceakite1@gmail.com</p>
+                        <p><b>Age:</b> 27</p>
+                        <p><b>Cohort:</b> 3</p>
+                        <p><b>Facilitator:</b> Joyce Sandra Atim</p>
+                        <p><b>Employment Status:</b> Looking for work</p>
+
+                        <div>
+                            <a href="./progress.html">Results/Progress</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./studentprofile.js"></script>
+</body>
+
+</html>
