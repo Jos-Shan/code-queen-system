@@ -23,12 +23,14 @@ router.post('/', function (req, res, next) {
    newApplication.save()
    .then(data => {
       console.log(data)
-      res.send("Application saved to database");
+      res.redirect('homepage');
+     // res.send("Application saved to database");
    })
    .catch(err => {
       console.log(err)
       res.status(400).send("Unable to save to database")
    });
+   
 }); 
 
      //retrieving
