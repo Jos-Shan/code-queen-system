@@ -5,6 +5,8 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require ('mongoose')
+// const port = process.env.PORT
+// require('./db/db')
 
 
 var indexRouter = require('./routes/index');
