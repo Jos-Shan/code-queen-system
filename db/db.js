@@ -1,4 +1,4 @@
-var express = require('express');
+
 var mongoose = require('mongoose');
 
 mongoose.connect(process.env.MONGODB_URL, {
@@ -7,4 +7,8 @@ mongoose.connect(process.env.MONGODB_URL, {
     useFindAndModify: true,
     useNewUrlParser: true
 })
+.then ((res) => {
+    console.log("MongoDB Connected");
+  });
+  
 

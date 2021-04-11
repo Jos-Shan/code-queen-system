@@ -1,7 +1,8 @@
+const crypto = require('crypto');
 import mongoose from "mongoose";
 const validator = require('validator')
 import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
+
 const userSchema = mongoose.Schema({
     firstname: {
         type: String,
@@ -34,22 +35,47 @@ const userSchema = mongoose.Schema({
     password: {
         type: String,
         required: true
-    }
-},
-    {timestamps : true}
-    );
+        
+    },
+    confirmPassword: {
+        type: String,
+        validate: {
+            validator: function(el) {
+                return el === this.password;
+            },
+            message: "passwords don't match"       
+        } 
+    },
+    passwordChangedAt: Date,
+    passwordResetToken: String,
+    passwordResetExpires: Date,
+});
 
 userSchema.pre('save', async function(next) {
     const user = this;
     if(user.isModified('password')){
      user.password = await bcrypt.hash(user.password, 8)
     }
+    //delete passwordConfirm
+    this.confirmPassword = undefined;
     next();
 });
-userSchema.methods.generateAuthToken = async function(){
-    const user = this;
-    const token = jwt.sign({ id: user._id, role: user.role, email: user.email }, process.env.JWT_KEY );
-    return token;
+
+userSchema.pre('save', function(next) {
+    if(!this.isModified('password') || this.isNew) return next();
+    this.passwordChangedAt = Date.now() - 1000;
+    next();
+});
+
+userSchema.methods.changedPasswordAfter = function(timestamp){
+    if(this.passwordChangedAt){
+        const changedTimestamp = parseInt(
+            this.passwordChangedAt.getTime() / 1000, 10
+        );
+        return timestamp < changedTimestamp;
+    }
+    //false means not changed
+    return false;
 };
 
 // static method to login user
@@ -58,7 +84,9 @@ userSchema.statics.login = async function(username, password) {
     if (user) {
       const  isPasswordMatch = await bcrypt.compare(password, user.password);
       if (isPasswordMatch) {
+      
         return user;
+        
       }
       throw Error('incorrect password'); 
     }
@@ -66,5 +94,16 @@ userSchema.statics.login = async function(username, password) {
     
   };
 
+  userSchema.methods.createPasswordResetToken = function() {
+  const resetToken = crypto.randomBytes(32).toString('hex');
+  this.passwordResetToken = crypto
+  .createHash('sha256')
+  .update(resetToken)
+  .digest('hex');
+  console.log({resetToken}, this.passwordResetToken);
+  
+  this.passwordResetExpires = Date.now() + 10 * 60 * 1000;
+  return resetToken;
+  }
 const User = mongoose.model('User', userSchema);
 export default User;

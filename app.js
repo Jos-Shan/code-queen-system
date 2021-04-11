@@ -4,9 +4,14 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session');
+var MongoDBSession = require('connect-mongodb-session')(session);
+var cors = require('cors');
+var morgan = require('morgan');
+require("dotenv").config();
 var mongoose = require ('mongoose')
-// const port = process.env.PORT
-// require('./db/db')
+//const port = process.env.PORT
+//require('./db/db')
 
 
 var indexRouter = require('./routes/index');
@@ -40,6 +45,8 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(morgan('dev'));
+app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
@@ -68,10 +75,67 @@ app.use(function(err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
+// from anna
+  app.use(session({
+    name: process.env.SESS_NAME,
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false,
+    store: store,
+    cookie:{
+      maxAge: 3 * 24 * 60 * 60,
+      sameSite: true
+    }
+  })
+  );
+  //middleware for finding userId
+  /*app.use((req,res,next) => {
+    const {userId} = req.session
+    if(userId) {
+      res.locals.user = User.findOne(user => user.Id === userId)
+    }
+    next();
+  })*/
+  /*const isAuth = (req, res, next) => {
+    if(req.session.isAuth){
+      next()
+    } else {
+      res.redirect('/login')
+    }
+  }*/
+  
+    app.get('/', (req, res) => {
+    // req.session.isAuth = true;
+      /*console.log(req.session);
+      console.log(req.session.id);*/
+      res.render("homepage");
+    });
+     app.post('/logout', (req, res) => {
+       req.session.destroy((error) =>{
+         if(error) throw error;
+         res.redirect('/homepage')
+       });
+     })
+     //retrieving
+     app.get('/form', function(req, res){
+      Application.find(function(err, response){
+          console.log(response);
+       });
+      });
+    
+
   // render the error page
   res.status(err.status || 500);
   res.render('error');
 });
 
 module.exports = app;
+
+
+
+
+
+
+
+  
 
