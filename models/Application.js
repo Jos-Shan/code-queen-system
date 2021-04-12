@@ -1,4 +1,3 @@
-//var express = require('express');
 var mongoose = require('mongoose');
 
 /*const dbPath = 'mongodb://localhost:27017/code-queen-db';
@@ -18,11 +17,6 @@ const schema = new mongoose.Schema({
         required: true,
         unique: true,
         lowercase: true,
-        /*validate: value =>{
-            if(!validator.isEmail(value)){
-                throw new Error ({error: 'Invalid email address'})
-            }
-        }*/
     },
     firstname: { type: String, required: true, trim: true },
     lastname: { type: String, required: true, trim: true },
