@@ -110,6 +110,9 @@ const loginPage = (req, res) => {
 const forgotpasswordPage = (req, res) => {
   res.render('forgotpassword');
 }
+
+
+
 // Get resetpassword
 const resetpasswordPage = async(req, res) => {
   const hashedToken = crypto
@@ -128,8 +131,9 @@ res.render("resetpassword",{
 const studentProfile = async (req, res) => {
   const user = await req.user;
   req.session.isAuth = true;
-  console.log(req.session);
-  res.render('profile');
+  console.log("Session????",req.session);
+  const data ={name:"Ëva"}
+  res.render('profile',data);
 }
 //Get Dashboard
 const adminDashboard = async (req, res) => {

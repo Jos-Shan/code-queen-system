@@ -81,7 +81,7 @@ app.use(function(err, req, res, next) {
     secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false,
-    store: store,
+    //store: store,
     cookie:{
       maxAge: 3 * 24 * 60 * 60,
       sameSite: true
