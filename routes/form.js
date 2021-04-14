@@ -11,11 +11,6 @@ router.get('/', function (req, res, next) {
     res.render('form');
 });
 
-/*router.post('/', function (req, res, next)  {
-   var formData = req.body
-   console.log("Data>>>>>",formData)
-   res.redirect('form');
-}); */
 
 router.post('/', function (req, res, next) {
    var newApplication = new Application(req.body);
