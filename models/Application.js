@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-/*const dbPath = 'mongodb://localhost:27017/code-queen-db';
+const dbPath = 'mongodb://localhost:27017/code-queen-db';
 const options = {
     useUnifiedTopology: true,
     useCreateIndex: true,
@@ -9,7 +9,7 @@ const options = {
 };
 
 //default connection
-mongoose.connect(dbPath, options); */
+mongoose.connect(dbPath, options); 
 
 const schema = new mongoose.Schema({
     email: {

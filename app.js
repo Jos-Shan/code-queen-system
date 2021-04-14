@@ -28,6 +28,8 @@ var alljobsRouter = require('./routes/alljobs');
 var postjobRouter = require('./routes/postjob');
 var registeruserRouter = require('./routes/registeruser');
 var registermentorRouter = require('./routes/registermentor');
+var resetpasswordRouter = require('./routes/resetpassword');
+var forgotpasswordRouter = require('./routes/forgotpassword');
 
 var app = express();
 
@@ -63,6 +65,8 @@ app.use('/all-jobs', alljobsRouter);
 app.use('/post-job', postjobRouter);
 app.use('/register-user', registeruserRouter);
 app.use('/register-mentor', registermentorRouter);
+app.use('/resetpassword', resetpasswordRouter);
+app.use('/forgotpassword', forgotpasswordRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
