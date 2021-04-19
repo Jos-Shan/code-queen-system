@@ -2,7 +2,7 @@ const { application } = require('express');
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-var Application = require('../models/Application'); 
+var Application = require('../models/Studentmodel'); 
 
 var app = express();
 
