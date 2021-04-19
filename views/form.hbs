@@ -15,8 +15,7 @@
       body{
         background-color: rgb(212, 138, 0);
         margin: 0;
-        font-family: sans-serif;
-        color: black;
+        font-family: Calibri, Helvetica, sans-serif;
       }
 
       .container{
@@ -47,7 +46,6 @@
 
       #description{
         font-weight: 200;
-        font-style: italic;
       }
 
       #application-form{
@@ -94,7 +92,8 @@
       #submit{
         width: 100%;
         padding: 0.8rem;
-        background-color: darkgray;
+        background-color: gray;
+        font-weight: bold;
         color: white;
         border-radius: 0.2rem;
         cursor: pointer;
@@ -129,8 +128,7 @@
                <input type='email' id='lastName' name="lastname" placeholder='Enter your lastname' class='form-input-size' required />
            </div>
            <div class='form-input'>
-               <label id='number-label'>Phone number
-                   <span>(WhatsApp number)</span>
+               <label id='number-label'>Phone number(WhatsApp number)
                </label>
                <input type="text" id="phoneNumber" name="phone" placeholder="Enter your contact" size="10" class='form-input-size' required />
            </div>
@@ -251,7 +249,7 @@
     
 
            <div class='form-input'>
-            <input type="checkbox" id="permission" name="permission"><label><b>Please check this box to give ETC permission to contact you and also process and store your data for reports</b></label>
+            <input type="checkbox" id="permission" name="permission"><label>Please check this box to give ETC permission to contact you and also process and store your data for reports</label>
             </div>
 
 
