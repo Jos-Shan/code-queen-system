@@ -80,7 +80,7 @@ app.use(function(err, req, res, next) {
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
 // from anna
-  app.use(session({
+ /* app.use(session({
     name: process.env.SESS_NAME,
     secret: process.env.SECRET,
     resave: false,
@@ -91,7 +91,8 @@ app.use(function(err, req, res, next) {
       sameSite: true
     }
   })
-  );
+  ); */
+
   //middleware for finding userId
   /*app.use((req,res,next) => {
     const {userId} = req.session

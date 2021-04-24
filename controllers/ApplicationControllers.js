@@ -1,4 +1,4 @@
-import Application from '../models/Application'
+import Application from '../models/Studentmodel'
 require("dotenv").config();
 //const { application } = require('express');
 //var express = require('express');

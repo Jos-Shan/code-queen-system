@@ -77,8 +77,8 @@
       #radio-btn,
       #check-box {
         margin-right: 0.5rem;
-        min-height: 1.2rem;
-        min-width: 1.2rem;
+        min-height: 0.8rem;
+        min-width: 0.8rem;
       }
 
       label {
@@ -105,7 +105,6 @@
 <body>
    <div class="container">
        
-
        <form id='application-form' name="form" method="POST" action="/form" class="input" autocomplete="on">
           <div class="heading">
             <img src="images/side-logo.png" width=200px height=100px>
@@ -163,7 +162,7 @@
 
             <div class='form-input'>
                 <label id='email-label'>If yes, how many?</label>
-                <input type='text' id="number_of_children"name="numberofchildren" placeholder='Your answer' class='form-input-size' required />
+                <input type='text' id="number_of_children" name="numberofchildren" placeholder='Your answer' class='form-input-size' required />
             </div>
 
             <div class='form-input'>
@@ -254,7 +253,7 @@
 
 
            <div class='form-input'>
-               <button type='button' id='submit' class="submitBtn" onclick="myFunction()" >Submit</button>
+             <button type='button' id='submit' class="submitBtn" onclick="myFunction()" >Submit</button>
            </div>
        </form>
    </div>
@@ -273,7 +272,7 @@
 
        function myFunction() {
            alert("Your application has been submitted");
-       }
+       } 
    </script>
 
 

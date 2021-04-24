@@ -1,15 +1,15 @@
 var mongoose = require('mongoose');
 
-const dbPath = 'mongodb://localhost:27017/code-queen-db';
+/*const DB_PATH = 'mongodb://localhost:27017/code-queen-db';
 const options = {
     useUnifiedTopology: true,
     useCreateIndex: true,
     useFindAndModify: true,
     useNewUrlParser: true
-};
+}; 
 
 //default connection
-mongoose.connect(dbPath, options); 
+mongoose.connect(DB_PATH, options); */
 
 const schema = new mongoose.Schema({
     email: {
