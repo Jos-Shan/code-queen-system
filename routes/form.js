@@ -6,7 +6,7 @@ var Application = require('../models/Studentmodel');
 
 var app = express();
 
-/* GET home page. */
+/* GET form page. */
 router.get('/', function (req, res, next) {
     res.render('form');
 });
@@ -18,8 +18,8 @@ router.post('/', function (req, res, next) {
    newApplication.save()
    .then(data => {
       console.log(data)
-      res.redirect('homepage');
-     // res.send("Application saved to database");
+      res.redirect('homepage')
+      
    })
    .catch(err => {
       console.log(err)

@@ -95,7 +95,7 @@
         background-color: gray;
         font-weight: bold;
         color: white;
-        border-radius: 0.2rem;
+        border-radius: 1.5rem;
         cursor: pointer;
         border: none;
       }
@@ -124,7 +124,7 @@
            </div>
            <div class='form-input'>
                <label id='name-label'>Lastname:</label>
-               <input type='email' id='lastName' name="lastname" placeholder='Enter your lastname' class='form-input-size' required />
+               <input type='text' id='lastName' name="lastname" placeholder='Enter your lastname' class='form-input-size' required />
            </div>
            <div class='form-input'>
                <label id='number-label'>Phone number(WhatsApp number)
@@ -253,24 +253,22 @@
 
 
            <div class='form-input'>
-             <button type='button' id='submit' class="submitBtn" onclick="myFunction()" >Submit</button>
+             <input type='submit' value="submit" id='submit' class="submitBtn">
            </div>
        </form>
    </div>
 
    <script>
-       $('.submitBtn').click( async (e)=>{
-        event.preventDefault();
-        fetch('/', {
-          method : 'POST',
+
+       function myFunction() {
+         event.preventDefault();
+         fetch('/', {
+            method : 'POST',
           body : JSON.stringify(),
           headers : {
             "Content-Type": "application/json"
           }
-        })
-       }); 
-
-       function myFunction() {
+         })
            alert("Your application has been submitted");
        } 
    </script>
