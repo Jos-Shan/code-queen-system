@@ -10,8 +10,7 @@ var cors = require('cors');
 var morgan = require('morgan');
 require("dotenv").config();
 var mongoose = require ('mongoose')
-//const port = process.env.PORT
-//require('./db/db')
+require('./db/db')
 
 
 var indexRouter = require('./routes/index');
@@ -33,7 +32,7 @@ var forgotpasswordRouter = require('./routes/forgotpassword');
 
 var app = express();
 
-mongoose.connect('mongodb://localhost:27017/code-queen-db', {useNewUrlParser: true, useUnifiedTopology: true})
+//mongoose.connect('mongodb://localhost:27017/code-queen-db', {useNewUrlParser: true, useUnifiedTopology: true})
 require('./models/Studentmodel'); 
 
 
