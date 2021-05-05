@@ -14,7 +14,7 @@ require('./db/db')
 
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+//var usersRouter = require('./routes/users');
 var homepageRouter = require('./routes/homepage');
 var cohortsRouter = require('./routes/cohorts');
 var loginRouter = require('./routes/login');
