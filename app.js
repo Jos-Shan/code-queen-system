@@ -51,7 +51,7 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+//app.use('/users', usersRouter);
 app.use('/homepage', homepageRouter);
 app.use('/cohorts', cohortsRouter);
 app.use('/login', loginRouter);
