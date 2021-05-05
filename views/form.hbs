@@ -119,11 +119,11 @@
                 <input type='email' id='email' name="email" placeholder='Enter your email' class='form-input-size' required />
             </div>
            <div class='form-input'>
-               <label id='name-label'>Firstname:</label>
+               <label id='fname-label'>Firstname:</label>
                <input type='text' id='firstName' name="firstname" placeholder='Enter your firstname' class='form-input-size' required />
            </div>
            <div class='form-input'>
-               <label id='name-label'>Lastname:</label>
+               <label id='lname-label'>Lastname:</label>
                <input type='text' id='lastName' name="lastname" placeholder='Enter your lastname' class='form-input-size' required />
            </div>
            <div class='form-input'>
@@ -161,7 +161,7 @@
             </div>
 
             <div class='form-input'>
-                <label id='email-label'>If yes, how many?</label>
+                <label id='children-label'>If yes, how many?</label>
                 <input type='text' id="number_of_children" name="numberofchildren" placeholder='Your answer' class='form-input-size' required />
             </div>
 
@@ -207,13 +207,13 @@
 
             <div class='form-input'>
                 <p>Do you have access to data bundles or wifi?</p>
-                <input type='radio' name='data' id='radio-btn' value='yes' />Yes</br>
-                <input type='radio' name='data' id='radio-btn' value='no' />No </br>
+                <input type='radio' name='data_access' id='radio-btn' value='yes' />Yes</br>
+                <input type='radio' name='data_access' id='radio-btn' value='no' />No </br>
             </div>
 
             <div class='form-input'>
-                <label id='email-label'>If No, How will you manage to continue with the program Online(for 2 hours classes, 3 times a week for 2 months)? NB: 80% attendance is required for graduation.</label>
-                <input type='text' id="classes" name="classes" placeholder='Your answer' class='form-input-size' required />
+                <label id='classes-label'>If No, How will you manage to continue with the program Online(for 2 hours classes, 3 times a week for 2 months)? NB: 80% attendance is required for graduation.</label>
+                <input type='text' id="classes" name="access_to_classes" placeholder='Your answer' class='form-input-size' required />
             </div>
 
 
@@ -230,13 +230,13 @@
            </div>
 
            <div class='form-input'>
-                <label id='email-label'>Which Facebook group, Website, WhatsApp group or other channels?</label>
-                <input type='text' id='media' name="media" placeholder='Enter your answer' class='form-input-size' required />
+                <label id='media-label'>Which Facebook group, Website, WhatsApp group or other channels?</label>
+                <input type='text' id='media' name="which_media_channel" placeholder='Enter your answer' class='form-input-size' required />
             </div>
 
             <div class='form-input'>
                 <p>Why do you want to sign up for this course?</p>
-                <select id="why_this_course" name="course" class='form-input-size' required>
+                <select id="why_this_course" name="why_this_course" class='form-input-size' required>
                     <option disabled selected value>Select your answer</option>
                     <option value='career change in technology'>I'm looking for a career change in technology</option>
                     <option value='up-skill for existing employer'>I want to up-skill for my existing employer</option>

@@ -33,7 +33,7 @@ var forgotpasswordRouter = require('./routes/forgotpassword');
 var app = express();
 
 //mongoose.connect('mongodb://localhost:27017/code-queen-db', {useNewUrlParser: true, useUnifiedTopology: true})
-require('./models/Studentmodel'); 
+require('./models/Applicationsmodel'); 
 
 
 // view engine setup

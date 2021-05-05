@@ -1,15 +1,5 @@
 var mongoose = require('mongoose');
 
-/*const DB_PATH = 'mongodb://localhost:27017/code-queen-db';
-const options = {
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: true,
-    useNewUrlParser: true
-}; 
-
-//default connection
-mongoose.connect(DB_PATH, options); */
 
 const schema = new mongoose.Schema({
     email: {
@@ -30,11 +20,11 @@ const schema = new mongoose.Schema({
     occupation: { type: String, required: true, trim: true },
     income: { type: String, required: true, trim: true },
     laptop: { type: String, required: true, trim: true },
-    data: { type: String, required: true, trim: true },
-    classes: { type: String, required: true, trim: true },
+    data_access: { type: String, required: true, trim: true },
+    access_to_classes: { type: String, required: true, trim: true },
     opportunity: { type: String, required: true, trim: true },
-    media: { type: String, required: true, trim: true  },
-    course: { type: String, required: true, trim: true },
+    which_media_channel: { type: String, required: true, trim: true  },
+    why_this_course: { type: String, required: true, trim: true },
 });
 
 const Application = module.exports = mongoose.model("Application", schema);
