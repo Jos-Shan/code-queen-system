@@ -32,7 +32,7 @@ function validateform()
 	{				                            
 		   alert("Thank You! You have successfully logged in.");
 		   // Redirecting to the studentprofile page. 
-		  // window.location = "studentprofile.html"; 
+		  // window.location = "studentprofile.hbs"; 
 	}//begins
 	
 //ends	
