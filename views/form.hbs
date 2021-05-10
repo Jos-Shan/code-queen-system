@@ -6,6 +6,9 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Code Queen Application Form</title>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
    <style>
       html{
@@ -61,7 +64,7 @@
       .form-input-size{
         display: block;
         width: 100%;
-        height: 1.5rem;
+        height: 2.0rem;
         padding: 0.3rem 0.4rem;
         border-radius: 0.2rem;
         outline: 0;
@@ -91,7 +94,7 @@
 
       #submit{
         width: 100%;
-        padding: 0.8rem;
+        padding: 0.6rem;
         background-color: gray;
         font-weight: bold;
         color: white;
@@ -246,21 +249,39 @@
             </div>
 
     
-
            <div class='form-input'>
             <input type="checkbox" id="permission" name="permission"><label>Please check this box to give ETC permission to contact you and also process and store your data for reports</label>
             </div>
 
 
            <div class='form-input'>
-             <input type='submit' value="submit" id='submit' class="submitBtn">
+             <input type='submit' value="Submit" id='submit' class="submitBtn">
+             
            </div>
+
+           <div class="toast">
+             <div class="toast-header">
+                Toast Header
+            </div>
+             <div class="toast-body">
+               Your application has been submitted
+             </div>
+          </div>
+
+           
        </form>
+          
    </div>
 
    <script>
 
-       function myFunction() {
+    $(document).ready(function(){
+      $("submit").click(function(){
+        $('.toast').toast('show');
+      });
+    });
+
+       /*function myFunction() {
          event.preventDefault();
          fetch('/', {
             method : 'POST',
@@ -270,7 +291,7 @@
           }
          })
            alert("Your application has been submitted");
-       } 
+       } */
    </script>
 
 

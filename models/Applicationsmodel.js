@@ -15,7 +15,7 @@ const schema = new mongoose.Schema({
     city: { type: String, required: true, trim: true },
     status: { type: String, required: true, trim: true },
     children: { type: String, required: true, trim: true },
-    numberofchildren: { type: Number, required: true, trim: true },
+    numberofchildren: { type: String, required: true, trim: true },
     education: { type: String, required: true, trim: true },
     occupation: { type: String, required: true, trim: true },
     income: { type: String, required: true, trim: true },
