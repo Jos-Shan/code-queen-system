@@ -6,9 +6,9 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Code Queen Application Form</title>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
    <style>
       html{
@@ -74,7 +74,7 @@
       }
 
       p{
-        font-size: 1.12rem;
+        font-size: 1.15rem;
       }
 
       #radio-btn,
@@ -106,6 +106,14 @@
     </style>
 </head>
 <body>
+
+  {{#if message }}
+  <div style="text-align: center" class="alert alert-success alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>{{message.intro}}</strong> {{message.message}}
+  </div>
+  {{/if}}
+  
    <div class="container">
        
        <form id='application-form' name="form" method="POST" action="/form" class="input" autocomplete="on">
@@ -219,7 +227,6 @@
                 <input type='text' id="classes" name="access_to_classes" placeholder='Your answer' class='form-input-size' required />
             </div>
 
-
            <div class='form-input'>
                <p>How did you hear about this opportunity?</p>
                <select id='opportunity' name="opportunity" class='form-input-size' required>
@@ -248,38 +255,19 @@
                 </select>
             </div>
 
-    
            <div class='form-input'>
             <input type="checkbox" id="permission" name="permission"><label>Please check this box to give ETC permission to contact you and also process and store your data for reports</label>
             </div>
 
-
            <div class='form-input'>
-             <input type='submit' value="Submit" id='submit' class="submitBtn">
-             
+             <input type='submit' value="Submit" id='submit' class="submitBtn"> 
            </div>
-
-           <div class="toast">
-             <div class="toast-header">
-                Toast Header
-            </div>
-             <div class="toast-body">
-               Your application has been submitted
-             </div>
-          </div>
-
            
        </form>
           
    </div>
 
    <script>
-
-    $(document).ready(function(){
-      $("submit").click(function(){
-        $('.toast').toast('show');
-      });
-    });
 
        /*function myFunction() {
          event.preventDefault();

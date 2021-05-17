@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
+var flash = require('connect-flash');
 var MongoDBSession = require('connect-mongodb-session')(session);
 var cors = require('cors');
 var morgan = require('morgan');
@@ -48,6 +49,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(morgan('dev'));
 app.use(cors());
+app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
@@ -72,6 +74,14 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
+//flash message middleware
+app.use ((req, res, next) =>{
+  app.locals.message = req.session.message
+  delete req.session.message
+  next()
+});
+
+
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
@@ -79,7 +89,7 @@ app.use(function(err, req, res, next) {
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
 // from anna
- /* app.use(session({
+  app.use(session({
     name: process.env.SESS_NAME,
     secret: process.env.SECRET,
     resave: false,
@@ -90,7 +100,9 @@ app.use(function(err, req, res, next) {
       sameSite: true
     }
   })
-  ); */
+  ); 
+
+
 
   //middleware for finding userId
   /*app.use((req,res,next) => {

@@ -8,8 +8,8 @@ var app = express();
 
 /* GET form page. */
 router.get('/', function (req, res, next) {
-    res.render('form');
-});
+   res.render('form', {message: ''})
+}); 
 
 
 router.post('/', function (req, res, next) {
@@ -18,7 +18,12 @@ router.post('/', function (req, res, next) {
    newApplication.save()
    .then(data => {
       console.log(data)
+      req.session.message ={
+         intro: 'Thank you!',
+         message: 'Application submitted'
+      }
       res.redirect('homepage')
+      
       
    })
    .catch(err => {
