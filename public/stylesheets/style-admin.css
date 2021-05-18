@@ -190,13 +190,39 @@ ul ul a {
     /* width:1000px */
 }
 
+
 .content-wrapper > h2{
     margin-bottom: 2rem;
 }
+
+/* tables */
+.user-info{
+    margin-top: 50px;
+    
+}
+.user-table{
+    margin-top: 30px;
+}
+
+
+
+/* BUTTONS */
+.delete-user-btn{
+    margin: 5px;
+    padding: 10px;
+}
+.btn-orange, .btn-green{
+    color: var(--font-color);
+
+}
+.btn-orange{
+    background-color: var(--orange-color);
+}
+.btn-green{
+    background-color: green;
+}
+
 /* media queries */
-
-
-/* STUDENT INFO */
 
 
 @media(max-width:768px) {
