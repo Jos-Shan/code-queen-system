@@ -18,7 +18,7 @@ router.post('/', function (req, res, next) {
    newApplication.save()
    .then(data => {
       console.log(data)
-      res.render('homepage', {message: "Application submitted"})
+      res.render('form', {message: "Application submitted"})
       
    })
    .catch(err => {
