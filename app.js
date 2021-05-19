@@ -49,7 +49,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(morgan('dev'));
 app.use(cors());
-app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
@@ -75,9 +74,9 @@ app.use(function(req, res, next) {
 });
 
 //flash message middleware
+app.use(flash());
 app.use ((req, res, next) =>{
-  app.locals.message = req.session.message
-  delete req.session.message
+  res.locals.message = require('express-messages') (req, res);
   next()
 });
 
