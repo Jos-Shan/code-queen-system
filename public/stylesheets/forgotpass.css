@@ -110,8 +110,42 @@ body
     transform:scale(0.7);
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
     .cover {
-      width: 100%; /* The width is 100%, when the viewport is 760px or smaller */
+		width: 70%;
+        padding: 0;
     }
-  }
+
+	#myform {
+        width: 100%; 
+    }
+    
+
+    }
+	/* landscape */
+	@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+
+		.cover {
+			width: 90%;
+			padding: 0;
+		}
+	
+		#myform {
+			width: 100%; 
+		}
+
+	}
+
+	/* for mobile phones */
+	@media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+		.cover {
+			width: 90%;
+			padding: 0;
+		}
+	
+		#myform {
+			width: 100%; 
+		}
+
+	}

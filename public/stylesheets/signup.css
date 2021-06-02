@@ -93,14 +93,46 @@ height: 150px;
 }
 
 
-@media (max-width: 576px) {
-    .registration-form form{
-        padding: 50px 20px;
+/* MediaQuerries For tablets */
+/* Portrait */
+
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .registration-form {
+		width: 70%;
+        padding: 0;
     }
 
-    .registration-form{
-        width: 70px;
-        height: 70px;
-       
+	.form {
+        width: 100%; 
     }
-}
+ 
+    }
+	/* landscape */
+	@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+
+		.registration-form {
+			width: 90%;
+			padding: 0;
+		}
+	
+		.form {
+			width: 100%; 
+		}
+
+	}
+
+	/* for mobile phones */
+	@media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+		.registration-form {
+			width: 90%;
+			padding: 0;
+		}
+	
+		.form {
+			width: 100%; 
+		}
+
+	}
+
+
