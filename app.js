@@ -23,6 +23,7 @@ var signupRouter = require('./routes/signup');
 var formRouter = require('./routes/form');
 var dashboardRouter = require('./routes/dashboard');
 var allstudentsRouter = require('./routes/allstudents');
+var studentprofileRouter = require('./routes/studentprofile');
 var profileRouter = require('./routes/profile');
 var alljobsRouter = require('./routes/alljobs');
 var postjobRouter = require('./routes/postjob');
@@ -35,6 +36,9 @@ var app = express();
 
 //mongoose.connect('mongodb://localhost:27017/code-queen-db', {useNewUrlParser: true, useUnifiedTopology: true})
 require('./models/Applicationsmodel'); 
+require('./models/Assessmentmodel'); 
+require('./models/Studentsmodel'); 
+require('./models/usersmodel'); 
 
 
 // view engine setup
@@ -60,6 +64,7 @@ app.use('/signup', signupRouter);
 app.use('/form', formRouter);
 app.use('/dashboard', dashboardRouter);
 app.use('/all-students', allstudentsRouter);
+app.use('/studentprofile', studentprofileRouter);
 app.use('/profile', profileRouter);
 app.use('/all-jobs', alljobsRouter);
 app.use('/post-job', postjobRouter);

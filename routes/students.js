@@ -2,34 +2,34 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-var Application = require('../models/Studentsmodel'); 
+var Student = require('../models/Studentsmodel'); 
 
 var app = express();
 
 /* GET form page. */
 router.get('/', function (req, res, next) {
-   res.render('form')
+   res.render('all-student')
 }); 
 
 
-router.post('/', function (req, res, next) {
-   var newApplication = new Application(req.body);
-   console.log("Data>>>>>",newApplication)
-   newApplication.save()
+router.post('/all-student', function (req, res, next) {
+   var newStudent = new Student(req.body);
+   console.log("Data>>>>>",newStudent)
+   newStudent.save()
    .then(data => {
       console.log(data)
-      res.render('form', {message: "Application submitted"})
+      res.render('', {message: "Student record added"})
       
    })
    .catch(err => {
       console.log(err)
-      res.status(400).send("Unable to save to database")
+      res.status(400).send("Unable to save student record")
    });
    
 }); 
 
      //retrieving
-    app.get('/form', function(req, res){
+    app.get('/', function(req, res){
     Application.find(function(err, response){
         console.log(response);
      });

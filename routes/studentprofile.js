@@ -6,14 +6,11 @@ router.get('/', function(req, res, next) {
   console.log(req.session)
   const user = req.user;
   //fetch from DB using user ID
-  res.render('profile', { 
-    name:"",
-    email: "",
-    age: "",
-    cohort:"",
-    facilitator: '',
-    status:"",
-    assessments: ''
+  res.render('studentprofile', { 
+    title: 'Admin',
+    appName:'The admin page' ,
+    name:"Eva",
+    lessons:[]
   });
 });
 
