@@ -9,6 +9,18 @@
 
 </head>
 <body>
+	{{#if errorMessage}}
+<div style ="text-align:center; background-color:#e2e3e5 ;" class="alert alert-{{errorMessage}}">
+	<button style= type ="button" class="close" data-dismiss="alert">&times; </button>
+<span style="color:red;  font-family:'Times New Roman', Times, serif; font-size:19px;">{{errorMessage}}</span>
+</div>
+{{/if}}
+ {{#if successMessage}}
+<div style ="text-align:center; background-color:#e2e3e5 ;" class="alert alert-{{successMessage}}">
+	<button style= type ="button" class="close" data-dismiss="alert">&times; </button>
+<span style="color: green;  font-family:'Times New Roman', Times, serif; font-size:19px;">{{successMessage}}</span>
+</div>
+{{/if}}
 	<div class="logo">
 		<img src="images/Code Queen Logo.png" alt="CodeQueen logo" width="200px">
 	</div>
@@ -18,21 +30,20 @@
 		<div class="container">
 			<form action="/login" class="form" id="loginform" method="POST">
 				<div class="form-input-group">
-					<input type="text" class="form-input" id="loginUsername"name="username" autofocus placeholder="Username">
+					<input type="text" class="form-input" id="loginUsername" name="username" autofocus placeholder="Username" required>
 				</div>
 				<div class="form-input-group">
-					<input type="password" class="form-input" id="security"name="password"autofocus placeholder="Password">
+					<input type="password" class="form-input" id="security" name="password"autofocus placeholder="Password" required>
 				<div> 
-				<div class="forgotpass"> <a href="forgotpassword" class="ml-auto mb-0 text-md">Forgot Password?</a></div>
-				<button class="form-button" type="button" onclick="validateform()"><a href="dashboard">Submit</a></button>
-				<p class="form-text">Don't have an account? <a id="form-link" href="signup">Sign Up Here</a></p>
+				<div class="forgotpass"> <a href="/forgotpassword" class="ml-auto mb-0 text-md">Forgot Password?</a></div>
+				<button type="submit" class="form-button" >Submit</button>
+				<p class="form-text">Don't have an account? <a id="form-link" href='/signup'>Sign Up Here</a></p>
 			</form>
 			
 		</div>
 	</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  
-<script src="login.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
