@@ -93,12 +93,16 @@ app.use(function(err, req, res, next) {
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
 // from anna
+const store = new MongoDBSession({
+  uri: process.env.DB_PATH,
+  collection: 'mySessions'
+ })
   app.use(session({
     name: process.env.SESS_NAME,
     secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false,
-    //store: store,
+    store: store,
     cookie:{
       maxAge: 3 * 24 * 60 * 60,
       sameSite: true
