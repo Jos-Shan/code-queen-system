@@ -8,6 +8,9 @@ body
 	background-size: cover;
 	background-repeat: no-repeat;
 
+    font-family: Helvetica, sans-serif;
+    font: Helvetica;
+
 }
 .logo 
 {
@@ -21,14 +24,14 @@ margin-bottom: 10px;
 {
     text-align: center;
     margin-bottom: 1rem;
-    font-family: 'Times New Roman', Times, serif;
-    font: 500rem;
+    font:  500rem;
+    
   
 
 }
 .cover
 {
-    background-color: orange;
+    background-color:#f3ac3a rgba(243,172,58,255);
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 20px;
@@ -53,7 +56,7 @@ margin-bottom: 10px;
     box-shadow: 5px 5px 10px rgb(25, 26, 25);
 }
 .btn {
-    background:gray;
+    background:#adadad rgba(35,31,32,255);
     float: right;
     margin-left: 10px;
     color: white;
@@ -70,6 +73,7 @@ margin-bottom: 10px;
     margin-top: 2.5rem;
     margin-top: 50px;
 
+
 }
 
 .box-text  
@@ -78,4 +82,51 @@ margin-bottom: 10px;
     margin: auto;
     align-self: center;
 }
+ 
+/* MediaQuerries For tablets */
+/* Portrait */
 
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .cover {
+		width: 70%;
+        padding: 0;
+    }
+
+	.student-details {
+        width: 100%; 
+    }
+    
+
+    }
+	/* landscape */
+	@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+
+		.cover {
+			width: 90%;
+			padding: 0;
+		}
+	
+		.student-details {
+			width: 100%; 
+
+		}
+
+	}
+
+	/* for mobile phones */
+	@media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+		.cover {
+			width: 90%;
+			padding: 0;
+		}
+	
+		.student-details{
+			width: 100%; 
+		}
+        .heading {
+            float: none;
+        }
+
+	}
+    img { max-width: 100%; height: auto; }

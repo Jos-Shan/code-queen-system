@@ -12,11 +12,14 @@ body{
 	/* align-items: center;
 	display: flex;
 	justify-content: center; */
-	--color-primary:orange;
+	--color-primary: #f3ac3a rgba(243,172,58,255);
 	--color-primary-dark:#08007f;
 	--color-secondary:lightgray;
 	
 	--border-radius:30px;
+
+	font-family: Helvetica, sans-serif;
+    font: Helvetica;
 }
 .logo 
 {
@@ -29,7 +32,7 @@ margin-bottom: 10px;
 }
 .big-one 
 {
-	background-color:orange;
+	background-color:#f3ac3a rgba(243,172,58,255);
 	margin-top: 50px;
 	margin-bottom: 50px;
 	border-radius: 20px;
@@ -56,7 +59,6 @@ margin-bottom: 10px;
 {
 	font-size: 3rem;
 	font-weight: bold;
-	font-family: 'Times New Roman', Times, serif;
 	margin-bottom: 2rem;
 	text-align: center;
 }
@@ -73,6 +75,7 @@ margin-bottom: 10px;
 
 }
 .form-input{
+	
 	display: block;
 	width: 100%;
 	padding: 10px 20px;
@@ -85,7 +88,7 @@ margin-bottom: 10px;
 }
 .form-input:focus{
 	background: #ffffff;
-	border: 2px gray;
+	border: 2px rgba(35,31,32,255);
 
 }
 .form-button{
@@ -95,7 +98,7 @@ margin-bottom: 10px;
 	color:white;
 	outline: none;
 	cursor: pointer;
-	background: gray;
+	background: #adadad rgba(35,31,32,255);
 	font-size: 1.2rem;
 	border: none;
 	border-radius: 30px;
@@ -125,3 +128,47 @@ margin-bottom: 10px;
 	margin-top: 0.75rem;
 	margin-left: 1rem;
 }
+
+/* MediaQuerries For tablets */
+/* Portrait */
+
+  @media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .big-one {
+		width: 70%;
+        padding: 0;
+    }
+
+	.form {
+        width: 100%; 
+    }
+    
+
+    }
+	/* landscape */
+	@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+
+		.big-one {
+			width: 90%;
+			padding: 0;
+		}
+	
+		.form {
+			width: 100%; 
+		}
+
+	}
+
+	/* for mobile phones */
+	@media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+		.big-one {
+			width: 90%;
+			padding: 0;
+		}
+	
+		.form {
+			width: 100%; 
+		}
+
+	}
+
