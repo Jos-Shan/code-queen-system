@@ -136,10 +136,7 @@ body
 			width: 70%;
             margin: auto; 
 		}
-        h1 {
-            font-size: 34px;
-        }
-
+       
 	}
 
 	/* for mobile phones */
@@ -156,6 +153,9 @@ body
             margin: auto ;
 
 		}
+       .container{
+        width: 60%;
+       }
        
         
 
