@@ -112,12 +112,13 @@ body
 
 @media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
     .cover {
-		width: 70%;
-        padding: 0;
+		width: 90%;
+        margin: auto;
     }
 
 	#myform {
-        width: 100%; 
+        width: 70%;
+        margin: auto; 
     }
     
 
@@ -128,24 +129,34 @@ body
 		.cover {
 			width: 90%;
 			padding: 0;
+            margin: auto;
 		}
 	
 		#myform {
-			width: 100%; 
+			width: 70%;
+            margin: auto; 
 		}
+        h1 {
+            font-size: 34px;
+        }
 
 	}
 
 	/* for mobile phones */
-	@media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+	@media screen and (min-device-width: 320px) and (max-device-width: 576px) {
 
 		.cover {
 			width: 90%;
-			padding: 0;
+            margin: auto;
+
 		}
 	
 		#myform {
-			width: 100%; 
+			width: 70%; 
+            margin: auto ;
+
 		}
+       
+        
 
 	}
