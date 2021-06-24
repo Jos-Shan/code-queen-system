@@ -1,70 +1,63 @@
 body{
       
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8),rgba(179, 172, 116, 0.8)),url("images/code queen.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)),url("../images/code\ queens.jpg");
 	padding: relative;
 	position: relative;
-	backdrop-filter: 20px;
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
     font-family: Helvetica, sans-serif;
-    font: Helvetica;
+	height: 100vh;
+	width: 100%;
    
   
 }
-.logo 
-{
-display: flex;
-justify-self: start;
-width: 200px;
-height: 150px;
+	.logo 
+	{
+	display: flex;
+	justify-self: start;
+	width: 200px;
+	height: 150px;
 
-}
+	}
 .form-space 
 {
-    background-color:#f3ac3a rgba(243,172,58,255);
-    margin-bottom: 20px;
-    border-radius: 20px;
-    margin-left: 50px;
-    margin-right: 50px;
-    width: 800px;
-    height: 700px;
+    background:#f3ac3a; 
+	border-radius: 30px;
+    width: 40%;
+    height: 70%;
     margin: auto;
-    padding-top: 50px;
+    padding-top: 12px;
+	
 
 }
-
+ 
 .title
 {
     font-size: 3rem;
     font-weight: bold;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
+	text-align: center;
+    margin-bottom: 1rem;
+	color:#231f20 rgba(35,31,32,255);
 
-}
-.registration-form{
-    padding: 50px;
-   
 }
 
 .form-area{
     background-color: #fff;
-    margin: auto;
-    padding: 40px 40px;
+    margin: 20px auto;
+    padding: 25px 20px;
     border-radius: 30px;
     box-shadow: 5px 5px 10px rgb(25, 26, 25);
-    max-width:  600px;
-    max-height: 600px;
+    width:  70%;
+    height: 380px;
    
 }
 
-.registration-form .item{
+.form-space .item{
    
 	border-radius: 20px;
-    margin-bottom: 25px;
-    padding: 10px 20px;
+    margin-bottom: 15px;
+    padding: 10px 30px;
     display: block;
 	width: 100%;
 	box-sizing: border-box;	
@@ -76,16 +69,16 @@ height: 150px;
 #register-btn
 {
     width: 100%;
-	padding: 1rem 2rem;
+	padding: 10px 30px;
 	font-weight: bold;
 	color:white;
 	outline: none;
 	cursor: pointer;
-	background:#adadad rgba(35,31,32,255);
+	background:darkgray;
 	font-size: 1.2rem;
 	border: none;
 	border-radius: 30px;
-	margin-top: 1rem;
+	margin-top: 1.2rem;
 }
 #register-btn:active
 {
@@ -93,49 +86,20 @@ height: 150px;
 }
 
 
-/* MediaQuerries For tablets */
-/* Portrait */
+/* MediaQuerries */
 
-@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-    .registration-form {
-		width: 70%;
+@media only screen and (max-width: 600px) {
+    .form-space {
+		width: 95%;
         margin: auto;
     }
 
-	.form {
-        width: 70%;
+	.form-area {
+        width: 90%;
 		margin: auto; 
     }
  
-    }
-	/* landscape */
-	@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+}
 
-		.registration-form {
-			width: 90%;
-			margin: auto;
-		}
-	
-		.form {
-			width: 70%;
-			margin: auto; 
-		}
-
-	}
-
-	/* for mobile phones */
-	@media screen and (min-device-width: 320px) and (max-device-width: 576px) {
-
-		.registration-form {
-			width: 90%;
-			margin: auto;
-		}
-	
-		.form {
-			width: 70%;
-			margin: auto; 
-		}
-
-	}
 
 

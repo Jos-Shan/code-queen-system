@@ -1,17 +1,15 @@
 
 body{
 	
-	background-image: linear-gradient(rgba(0, 0, 0, 0.8),rgba(179, 172, 116, 0.8)),url("images/code queen.jpg");
-	
+	background-image: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)),url("../images/code \queens.jpg");
 	position: relative;
-	backdrop-filter: 20px;
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
+	height: 100vh;
+	width: 100%;
 
-	/* align-items: center;
-	display: flex;
-	justify-content: center; */
+
 	--color-primary: #f3ac3a rgba(243,172,58,255);
 	--color-primary-dark:#08007f;
 	--color-secondary:lightgray;
@@ -19,38 +17,33 @@ body{
 	--border-radius:30px;
 
 	font-family: Helvetica, sans-serif;
-    font: Helvetica;
-}
-.logo 
-{
-display: flex;
-justify-self: start;
-width: 200px;
-height: 150px;
-margin-bottom: 10px;
 
 }
+	.logo 
+	{
+	display: flex;
+	justify-self: start;
+	width: 150px;
+	height: 100px;
+
+	}
 .big-one 
 {
-	background-color:#f3ac3a rgba(243,172,58,255);
-	margin-top: 50px;
-	margin-bottom: 50px;
-	border-radius: 20px;
-	margin-left: 50px;
-	margin-right: 50px;
-	width: 600px;
-	height: 550px;
+	background-color:#f3ac3a;
+	border-radius: 30px;
+	width: 40%;
+	height: 73%;
 	margin: auto;
-	padding-right: 5px;
-	padding-top: 3rem;
+	padding-top: 15px;
+	
 	
 }
 .container 
 {
-	width: 400px;
-	max-width: 400px;
+	width: 70%;
+	height: 68%;
 	margin: auto;
-	padding: 2rem;
+	padding-top: 2rem;
 	box-shadow: 5px 5px 10px rgb(25, 26, 25);
 	background: white;
 	border-radius: 30px ;
@@ -59,15 +52,16 @@ margin-bottom: 10px;
 {
 	font-size: 3rem;
 	font-weight: bold;
-	margin-bottom: 2rem;
+	margin-bottom: 1.5rem;
 	text-align: center;
+	color:#231f20 rgba(35,31,32,255);
 }
 .form > *:first-child{
 	margin-top: 0;
 
 }
 .form > *:last-child{
-	margin-bottom: 2rem;
+	margin-bottom: 1.5rem;
 }
 
 .form-input-group{
@@ -93,12 +87,12 @@ margin-bottom: 10px;
 }
 .form-button{
 	width: 100%;
-	padding: 1rem 2rem;
+	padding: 10px 20px;
 	font-weight: bold;
 	color:white;
 	outline: none;
 	cursor: pointer;
-	background: #adadad rgba(35,31,32,255);
+	background: darkgray;
 	font-size: 1.2rem;
 	border: none;
 	border-radius: 30px;
@@ -111,8 +105,9 @@ margin-bottom: 10px;
 	transform:scale(0.7);
 }
 .form-text {
-	text-align: center;
-	margin-top: 2rem;
+	text-align: left;
+	margin-top: 1rem;
+	margin-left: 1.3rem;
 
 }
 #form-link{
@@ -125,53 +120,36 @@ margin-bottom: 10px;
 	text-decoration: underline;
 }
 .forgotpass {
-	margin-top: 0.75rem;
-	margin-left: 1rem;
+	margin-top: 1.2rem;
+	margin-left: 1.2rem;
 }
 
-/* MediaQuerries For tablets */
-/* Portrait */
+/* MediaQuerries*/
 
-  @media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+
+  @media only screen and (min-width:280px) and (max-width: 400px) {
     .big-one {
-		width: 70%;
-        padding: 0;
+		width: 90%;
+       margin: auto;
+	   height: 70%;
     }
 
-	.form {
-        width: 100%; 
+	.container {
+        width: 90%;
+		margin: auto;
+		height: 270px; 
     }
+	.form-title{
+		font-size: 30px;
+	}
+	html{
+		font-size:small;
+	}
+	.logo{
+		width: 100px;
+		height: 60px;
+	}
     
 
     }
-	/* landscape */
-	@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-
-		.big-one {
-			width: 90%;
-			margin: auto;
-		}
-	
-		.form {
-			width: 70%; 
-			margin: auto;
-
-		}
-
-	}
-
-	/* for mobile phones */
-	@media screen and (min-device-width: 320px) and (max-device-width: 576px) {
-
-		.big-one {
-			width: 90%;
-			margin: auto;
-		}
-	
-		.form {
-			width: 70%;
-			margin: auto; 
-		}
-
-	}
 

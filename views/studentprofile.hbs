@@ -6,43 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Profile</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/studentprofile.css">
 
 </head>
 
 <body>
+
+<div class="topnav" id="myTopnav">  
+    <a href="signup">Edit details</a>
+    <a href="connect">Connect</a>
+    <a href="studentlist">All students</a>
+    <a href="homepage">Logout</a>
     <img src="images/Code Queen Logo.png" alt="Code Queen Logo" class="logo">
-    <div class="cover">
-        <h1 class="title">Student Profile</h1>
-        <div class="container">
-            <div class="heading">
-                <a href="homepage" class="btn btn-secondary" role="button"> Logout</a>
-                <a href="connect" class="btn btn-secondary" role="button"> Connect</a>
-                <a href="studentlist" class="btn btn-secondary" role="button"> Students'List</a>
-                <a href="signup" class="btn btn-secondary" role="button"> Edit Details </a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+    </a>
+</div>
 
-                <div class="student-details">
-                    <div class="profile-photo">
-                        <p><label for="file" style="cursor: pointer;">Upload Image</label></p>
-                        <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none">
-                        <img id="output" width="160" height="150"/>	
-                    </div>
-                    <div class="box-text">
-                        <h4>Joyce Thereza Akite</h4>
-                        <p><b>Email:</b> joyceakite1@gmail.com</p>
-                        <p><b>Age:</b> 27</p>
-                        <p><b>Cohort:</b> 3</p>
-                        <p><b>Facilitator:</b> Joyce Sandra Atim</p>
-                        <p><b>Employment Status:</b> Looking for work</p>
+<div class="cover">
+  <h1 class="page-title">Student's Profile </h2>
 
-                        <div>
-                            <a href="progress">Results/Progress</a>
-                        </div>
-                    </div>
-                </div>
+    <div class="heading">
+        <div class="student-details">
+           <div class="profile-photo">
+                <p><label for="file" style="cursor: pointer;">Upload Image</label></p>
+                <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none">
+                <img id="output" width="160" height="150"/>	
+           </div>
+           <div class="box-text">
+                <h4>Joyce Thereza Akite</h4>
+                <p><b>Email:</b> joyceakite1@gmail.com</p>
+                <p><b>Age:</b> 27</p>
+                <p><b>Cohort:</b> 3</p>
+                <p><b>Facilitator:</b> Joyce Sandra Atim</p>
+                <p><b>Employment Status:</b> Looking for a job</p>
+
+            <div>
+                <a href="progress">Results/Progress</a>
             </div>
         </div>
     </div>
+</div>
+     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -50,3 +56,13 @@
 </body>
 
 </html>
+<script>
+    function myFunction() {
+	var x = document.getElementById("myTopnav");
+	if (x.className === "topnav") {
+	  x.className += " responsive";
+	} else {
+	  x.className = "topnav";
+	}
+  }
+</script>
