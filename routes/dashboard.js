@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+var User = require('../models/User'); 
 //Get dashboard
 router.get('/', async(req, res) => {
   const user = await req.session.user;

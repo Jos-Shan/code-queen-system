@@ -38,6 +38,7 @@ var app = express();
 require('./models/Applicationsmodel'); 
 require('./models/Assessmentmodel'); 
 require('./models/Studentsmodel'); 
+require('../models/User'); 
 require('./models/usersmodel'); 
 
 

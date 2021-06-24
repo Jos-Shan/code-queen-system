@@ -1,13 +1,13 @@
 var express = require('express');
 var router = express.Router();
-
+var User = require('../models/User'); 
 //Get login page
 router.get('/', function(req, res) {
     res.render('login')
   });
 
   // POST for login
-router.get('/', async(req, res) => {
+router.post('/', async(req, res) => {
     const { username, password } = req.body;
     //console.log({username, password});
     try{ 
