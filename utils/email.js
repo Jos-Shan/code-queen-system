@@ -12,7 +12,7 @@ const sendEmail = async options => {
     });
     // 2 Define email options
     const mailOptions = {
-        from: 'ETC - CODEQUEEN <annakarungi15@gmail.com>',
+        from: process.env.EMAIL_USERNAME,
           to: options.email,
           subject:options.subject,
           html: options.html,

@@ -73,36 +73,37 @@
             <div class="content-wrapper">
                 <h2>REGISTER USER</h2>
                 <div class="container-fluid">
-                    <form action="">
+                    <form action="/register-user" method="POST" name="">
                         <div class="form-group">
                           <label for="name">Name:</label>
-                          <input type="name" class="form-control" placeholder="Enter name" id="user-name">
+                          <input type="name" class="form-control" placeholder="Enter name" id="user-name" name="Name">
                         </div>
                         <div class="form-group">
                             <label for="sex">Sex:</label>
-                            <select id="user-sex">
+                            <select id="user-sex" name="sex">
                                 <option value="Female">Female</option>
                                 <option value="Male">Male</option>
                             </select>
                         </div>
                         <div class="form-group">
                           <label for="email">Email:</label>
-                          <input type="email" class="form-control" placeholder="Enter email" id="user-email">
+                          <input type="email" class="form-control" placeholder="Enter email" id="user-email" name="email">
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone number:</label>
-                            <input type="number" class="form-control" placeholder="Enter phone number" id="user-phone">
+                            <input type="number" class="form-control" placeholder="Enter phone number" id="user-phone" name="phone">
                         </div>
                         
                         <div class="form-group">
                             <label for="role">Role:</label>
-                            <select id="user-role">
+                            <select id="user-role" name="role">
                                 <option value="Admin">Admin</option>
                                 <option value="Facilitator">Facilitator</option>
                             </select>
                         </div>
                         
-                        <button type="submit" class="btn btn-orange" id="register-user-btn">Submit</button>
+                        
+                        <input type='submit' value="Submit" id="register-user-btn" class="btn btn-orange">
                       
                       </form> 
                       
