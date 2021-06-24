@@ -35,11 +35,11 @@
                 <a href="#" class="btn btn-secondary" role="button"> Edit Details </a>
 
                 <div class="student-details">
-                    <div class="profile-photo">
-                        <p><label for="file" style="cursor: pointer;"><b>Profile Photo</b></label></p>
-                     <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none">
-                         <!--- <img id="output" width="150" height="140" />-->
-                        <img src="images/avtr.png" alt="Avatar" class="avatar">                   
+                     <p><label for="file"><b>Profile Photo</b></label></p>
+                            <!--<img src="images/avtr.png" alt="Avatar" class="avatar">-->
+                            <img src={{single_image}} alt="Avatar" class="avatar">
+                             <input type="file" name="img" id="fileToUpload">
+                             <input type="submit" value="Upload Image" name="submit">                 
                         
                     </div>
                     <div class="box-text">

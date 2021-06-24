@@ -106,7 +106,7 @@
                   class="nav-link dropdown-toggle name-link"
                   href="#"
                   data-toggle="dropdown"
-                  ><i class="fas fa-user"></i> Name</a
+                  ><i class="fas fa-user"></i> {{user.username}}</a
                 >
                 <ul class="dropdown-menu">
                   <li>
@@ -114,11 +114,12 @@
                       ><i class="fas fa-user"></i> My Profile</a
                     >
                   </li>
+                  <form action="/logout" method="POST">
                   <li>
                     <a class="dropdown-item" href="#"
                       ><i class="fas fa-key"></i> Log out
                     </a>
-                  </li>
+                  </li></form>
                 </ul>
               </li>
 
