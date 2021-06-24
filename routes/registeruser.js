@@ -5,7 +5,6 @@ var user = require('../models/usersmodel');
 
 var app = express();
 
-/* GET form page. */
 router.get('/', function (req, res, next) {
    res.render('register-user')
 }); 
