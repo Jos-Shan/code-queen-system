@@ -107,4 +107,5 @@ userSchema.statics.login = async function(username, password) {
   return resetToken;
   }
 const User = mongoose.model('User', userSchema);
-export default User;
+module.exports = User;
+//export default User;
