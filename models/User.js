@@ -106,6 +106,6 @@ userSchema.statics.login = async function(username, password) {
   this.passwordResetExpires = Date.now() + 10 * 60 * 1000;
   return resetToken;
   }
-const User = mongoose.model('User', userSchema);
-module.exports = User;
+const User = module.exports = mongoose.model('User', userSchema);
+
 //export default User;
