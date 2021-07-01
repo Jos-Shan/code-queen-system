@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/User'); 
+var mongoose = require('mongoose');
 //GET resetpassword
 router.get('/:token', async(req, res) => {
   const hashedToken = crypto
