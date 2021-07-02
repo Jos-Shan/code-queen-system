@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var User = require('../models/User'); 
+var User = require('../models/User');
+var mongoose = require('mongoose');
 // GET forgotpassword
 router.get('/', function(req, res) {
   res.render('forgotpassword'); 
