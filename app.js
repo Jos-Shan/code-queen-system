@@ -22,7 +22,7 @@ var loginRouter = require('./routes/login');
 var signupRouter = require('./routes/signup');
 var formRouter = require('./routes/form');
 var dashboardRouter = require('./routes/dashboard');
-var allstudentsRouter = require('./routes/allstudents');
+var studentsRouter = require('./routes/students');
 var studentprofileRouter = require('./routes/studentprofile');
 var profileRouter = require('./routes/profile');
 var alljobsRouter = require('./routes/alljobs');
@@ -64,7 +64,7 @@ app.use('/login', loginRouter);
 app.use('/signup', signupRouter);
 app.use('/form', formRouter);
 app.use('/dashboard', dashboardRouter);
-app.use('/all-students', allstudentsRouter);
+app.use('/all-students', studentsRouter);
 app.use('/studentprofile', studentprofileRouter);
 app.use('/profile', profileRouter);
 app.use('/all-jobs', alljobsRouter);
@@ -93,7 +93,7 @@ app.use(function(err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-// from anna
+
 const store = new MongoDBSession({
   uri: process.env.DB_PATH,
   collection: 'mySessions'

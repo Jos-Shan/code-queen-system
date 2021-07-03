@@ -1,3 +1,4 @@
+const { ObjectId } = require('mongodb');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
@@ -10,7 +11,7 @@ const StudentSchema = new Schema({
     Age: { type: Number, required: true, trim: true },
     Cohort: { type: String, required: true, trim: true },
     Status: { type: String, required: true, trim: true },
-    Assessment: []
+    Assessment: { type: ObjectId, ref: "Assessment"}
 });
 
 const Student = mongoose.model('Student', StudentSchema);
