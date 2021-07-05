@@ -10,7 +10,7 @@ body{
 	width: 100%;
 
 
-	--color-primary: #f3ac3a rgba(243,172,58,255);
+	--color-primary: #f3ac3a;
 	--color-primary-dark:#08007f;
 	--color-secondary:lightgray;
 	
@@ -23,8 +23,8 @@ body{
 	{
 	display: flex;
 	justify-self: start;
-	width: 150px;
-	height: 100px;
+	width: 200px;
+	height: 150px;
 
 	}
 .big-one 
@@ -54,7 +54,7 @@ body{
 	font-weight: bold;
 	margin-bottom: 1.5rem;
 	text-align: center;
-	color:#231f20 rgba(35,31,32,255);
+	color:#231f20;
 }
 .form > *:first-child{
 	margin-top: 0;
@@ -146,10 +146,66 @@ body{
 		font-size:small;
 	}
 	.logo{
-		width: 100px;
-		height: 60px;
+		width: 120px;
+		height: 80px;
 	}
     
 
     }
 
+	@media only screen and (min-width:401px) and (max-width: 567px) {
+		.big-one {
+			width: 90%;
+		   margin: auto;
+		   height: 60%;
+		}
+	
+		.container {
+			width: 90%;
+			margin: auto;
+			height: 270px; 
+		}
+		.form-title{
+			font-size: 30px;
+		}
+		html{
+			font-size: small;
+		}
+		.logo{
+			width: 150px;
+			height: 100px;
+		}
+		
+	
+		}
+
+		@media only screen and (min-width: 568px) and (max-width: 780px) {
+			.big-one {
+				width: 90%;
+			   margin: 70px auto;
+			   height: 55%;
+			}
+		
+			.container {
+				width: 90%;
+				margin: auto;
+				height: 350px; 
+			}
+			.form-title{
+				font-size: 45px;
+			}
+			html{
+				font-size: large;
+			}
+			.logo{
+				width: 200px;
+				height: 150px;
+				margin-bottom: 1.5rem;
+		
+
+			}
+			
+		
+			}
+		
+	
