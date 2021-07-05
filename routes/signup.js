@@ -1,14 +1,15 @@
 var express = require('express');
 var router = express.Router();
-var User = require('../models/User'); 
+var mongoose = require('mongoose');
+var User = require('../models/User');
 
 /* GET Signup page. */
-router.get('/', function(req, res, next) {
-  res.render('signup')
+router.get('/', function(req, res) {
+  res.render('signup');
 });
 
 /*POST for signup*/
-router.post('/', async(req, res, next) => {
+router.post('/', async(req, res) => {
   const { firstname, lastname, username, email, password} = req.body;
   try{
     const user = new User({ firstname ,lastname,username, email, password});
@@ -20,4 +21,4 @@ router.post('/', async(req, res, next) => {
  
 });
 
-module.exports = router
+module.exports = router;

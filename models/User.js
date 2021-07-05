@@ -1,9 +1,10 @@
-const crypto = require('crypto');
+var crypto = require('crypto');
 var mongoose = require('mongoose');
-const validator = require('validator');
+const Schema = mongoose.Schema;
+var validator = require('validator');
 var bcrypt = require('bcryptjs');
 
-const userSchema = mongoose.Schema({
+const userSchema = new Schema({
     firstname: {
         type: String,
         required: [true, 'Please enter your firstname']
@@ -106,6 +107,5 @@ userSchema.statics.login = async function(username, password) {
   this.passwordResetExpires = Date.now() + 10 * 60 * 1000;
   return resetToken;
   }
-const User = module.exports = mongoose.model('User', userSchema);
-
-//export default User;
+const User = mongoose.model('User', userSchema);
+module.exports = User;

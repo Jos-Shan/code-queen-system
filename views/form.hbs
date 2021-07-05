@@ -103,6 +103,15 @@
         border: none;
       }
 
+      .back {
+        width: 20%;
+        padding: 10px;
+        background-color: gray;
+        color: white;
+        border-radius: 15px;
+        border: none;
+      }
+
     </style>
 </head>
 <body>
@@ -113,10 +122,13 @@
     <span style="color: green; font-size: 20px;">{{message}}</span>
   </div>
   {{/if}}
+
   
    <div class="container">
        
        <form id='application-form' name="form" method="POST" action="/form" class="input" autocomplete="on">
+        <a href="homepage"><button class="back" type="button">Back to homepage</button></a> 
+
           <div class="heading">
             <img src="images/side-logo.png" width=200px height=100px>
             <h1 id='title'>Sign up for Code Queen Kampala</h1>
@@ -266,21 +278,6 @@
        </form>
           
    </div>
-
-   <script>
-
-       /*function myFunction() {
-         event.preventDefault();
-         fetch('/', {
-            method : 'POST',
-          body : JSON.stringify(),
-          headers : {
-            "Content-Type": "application/json"
-          }
-         })
-           alert("Your application has been submitted");
-       } */
-   </script>
 
 
 </body>
