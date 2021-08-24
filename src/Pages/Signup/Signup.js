@@ -108,7 +108,7 @@ const Signup = () => {
     return (
     <div>
         <Header/>
-        <div class="logo">
+        <div className="logo">
             <img src="images/logo.png" alt="CodeQueen logo" />
         </div>
         {/* {success && (
@@ -121,11 +121,11 @@ const Signup = () => {
                 Error Encountered while registering user
             </div>
         )} */}
-        <div class="form-space">
-            <h2 class="title">Sign up</h2>
-            <form class="form" onSubmit={handleSubmit} noValidate>
-                <div class="form-area">
-                    <div class="form-group">
+        <div className="form-space">
+            <h2 className="title">Sign up</h2>
+            <form className="form" onSubmit={handleSubmit} noValidate>
+                <div className="form-area">
+                    <div className="form-group">
                         <input
                             type="text"
                             className="form-control item"
@@ -138,7 +138,7 @@ const Signup = () => {
                     <p className="error">{errors.firstname}</p>
                   )}
                     </div>
-                    <div class="form-group">
+                    <div className="form-group">
                         <input
                             type="text"
                             className="form-control item"
@@ -153,7 +153,7 @@ const Signup = () => {
                    
                   )}
                     </div>
-                    <div class="form-group">
+                    <div className="form-group">
                         <input
                             type="text"
                             className="form-control item"
@@ -166,7 +166,7 @@ const Signup = () => {
                     <p className="error">{errors.username}</p>
                   )}
                     </div>
-                    <div class="form-group">
+                    <div className="form-group">
                         <input
                             type="text"
                             className="form-control item"
@@ -179,7 +179,7 @@ const Signup = () => {
                     <p className="error">{errors.email}</p>
                   )}
                     </div>
-                    <div class="form-group">
+                    <div className="form-group">
                         <input
                             type="password"
                             className="form-control item"
@@ -192,7 +192,7 @@ const Signup = () => {
                     <p className="error">{errors.password}</p>
                   )}
                     </div>
-                    <div class="form-group">
+                    <div className="form-group">
                         <input
                             type="password"
                             className="form-control item"
@@ -205,7 +205,7 @@ const Signup = () => {
                     <p className="error">{errors.confirmpassword}</p>
                   )}
                     </div>
-                    <div class="form-group">
+                    <div className="form-group">
                         <button
                             type="submit"
                             className="btn btn-block create-account"

@@ -5,6 +5,7 @@ import Header from '../../Components/Layout/Header'
 import './Login.css'
 import useForm from '../Useform/Useform'
 import validate from '../ValidateFormRules/ValidateFormRules'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
   const {values, errors,handleChange, handleSubmit,  } = useForm(login, validate);
@@ -73,14 +74,14 @@ const Login = () => {
     return (
         <div>
             <Header/>
-            <div class="logo">
+            <div className="logo">
                 <img
                     src="images/logo.png"
                     alt="CodeQueen logo"
                 />
             </div>
-            <div class="big-one">
-                <h1 class="form-title">Login</h1>
+            <div className="big-one">
+                <h1 className="form-title">Login</h1>
                 {/* {success && (
                  <div class="alert alert-success" role="alert">
                     Successfuly Logged on
@@ -91,12 +92,12 @@ const Login = () => {
                    Login Failed
                     </div> )} */}
 
-                <div class="container">
-                    <form action="/login" class="form" onSubmit={handleSubmit} noValidate id="loginform" method="POST">
-                        <div class="form-input-group">
+                <div className="container">
+                    <form action="/login" className="form" onSubmit={handleSubmit} noValidate id="loginform" method="POST">
+                        <div className="form-input-group">
                             <input
                                 type="text"
-                                class="form-input"
+                                className="form-input"
                                 id="loginUsername"
                                 name="username"
                                 autofocus
@@ -107,10 +108,10 @@ const Login = () => {
                             />
                             {errors.username && (<p className="error">{errors.username}</p>)}
                         </div>
-                        <div class="form-input-group">
+                        <div className="form-input-group">
                             <input
                                 type="password"
-                                class="form-input"
+                                className="form-input"
                                 id="security"
                                 name="password"
                                 autofocus
@@ -121,20 +122,20 @@ const Login = () => {
                             />
                              {errors.password && (<p className="error">{errors.password}</p>)}
                         </div>
-                        <div class="forgotpass">
+                        <div className="forgotpass">
                             {" "}
-                            <a href="/forgotpassword" class="ml-auto mb-0 text-md">
+                            <Link to= "/forgotpassword" className="ml-auto mb-0 text-md">
                                 Forgot Password?
-                            </a>
+                            </Link>
                         </div>
-                        <button type="submit" class="form-button">
+                        <button type="submit" className="form-button">
                             Submit
                         </button>
-                        <p class="form-text">
+                        <p className="form-text">
                             Don't have an account?{" "}
-                            <a id="form-link" href="/signup">
+                            <Link id="form-link" to="/signup">
                                 Sign Up Here
-                            </a>
+                            </Link>
                         </p>
                     </form>
                 </div>

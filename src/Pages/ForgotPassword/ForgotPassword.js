@@ -3,6 +3,7 @@ import React from 'react'
 import './ForgotPassword.css'
 import useForm from '../Useform/Useform'
 import validate from '../ValidateFormRules/ValidateFormRules'
+import { Link } from 'react-router-dom'
  
 const ForgotPassword = () => {
     const {values, errors,handleChange, handleSubmit,  } = useForm(forgotpass, validate);
@@ -12,10 +13,10 @@ const ForgotPassword = () => {
   }
     return (
         <div>
-            <div class="logo"><img src="images/logo.png" alt="Code Queen logo"/></div>
-            <div class="cover">
-                <h1 class="title">Forgot your Password?</h1>
-                <div class="container">
+            <div className="logo"><img src="images/logo.png" alt="Code Queen logo"/></div>
+            <div className="cover">
+                <h1 className="title">Forgot your Password?</h1>
+                <div className="container">
                     <form id="myform" method="POST" action="/forgotpassword" onSubmit={handleSubmit} noValidate>
                         <input
                             type="text"
@@ -28,9 +29,9 @@ const ForgotPassword = () => {
                               {errors.email && (
                     <p className="error">{errors.email}</p>
                   )}
-                        <div class="buttons">
-                            <a href="login"><button class="back" type="button">Back</button></a>
-                            <button class="submit" type="button" id="send-btn">Submit</button>
+                        <div className="buttons">
+                            <Link to="/login"><button class="back" type="button">Back</button></Link>
+                            <button className="submit" type="button" id="send-btn">Submit</button>
                         </div>
                     </form>
                 </div>
