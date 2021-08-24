@@ -20,16 +20,16 @@ const ResetPassword = () => {
 
     return (
         <div>
-            <div class="logo"><img src="images/logo.png" alt="Code Queen logo" width="120px" /></div>
-            <div class="cover">
-                <h1 class="title">Reset your Password</h1>
-                <div class="container">
+            <div className="logo"><img src="images/logo.png" alt="Code Queen logo" width="120px" /></div>
+            <div className="cover">
+                <h1 className="title">Reset your Password</h1>
+                <div className="container">
                     <form id="myform" method="PATCH"  action="/resetpassword/{{ token }}"onSubmit={handleSubmit} noValidate >
-                        <div class="input">
+                        <div className="input">
                             <input
                             type="text" 
                             id="password" 
-                            class="ifield" 
+                            className="ifield" 
                             name="password"
                             autofocus placeholder="Enter new password" 
                             value={values.password}
@@ -37,11 +37,11 @@ const ResetPassword = () => {
                             />
                             {errors.password && (<p className="error">{errors.password}</p>)}
                         </div>
-                        <div class="input">
+                        <div className="input">
                             <input 
                              type="text"
                              id="cfmpassword"
-                             class="ifield"
+                             className="ifield"
                              name="confirmpassword"
                              autofocus placeholder="Confirm password" 
                              value={values.confirmpassword}
@@ -50,8 +50,8 @@ const ResetPassword = () => {
                             {errors.confirmpassword && (<p className="error">{errors.confirmpassword}</p>)}
                         </div>
 
-                        <div class="btn">
-                            <button class="ifield" type="submit">Submit</button>
+                        <div className="btn">
+                            <button className="ifield" type="submit">Submit</button>
                         </div>
                     </form>
                 </div>

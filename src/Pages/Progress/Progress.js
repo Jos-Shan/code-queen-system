@@ -3,11 +3,11 @@ import React from 'react'
 const Progress = () => {
     return (
         <div>
-            <div class="logo"><img src="images/logo.png" alt="Code Queen logo"/></div>
+            <div className="logo"><img src="images/logo.png" alt="Code Queen logo"/></div>
             <div className="cover">
             <h2 className="title">Progress Sheet</h2>
-            <div class="container">
-                <table class="table">
+            <div className="container">
+                <table className="table">
                     <thead>
                         <tr>
                             <th rowSpan="2">Name</th>
